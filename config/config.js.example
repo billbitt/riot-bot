@@ -1,0 +1,8 @@
+module.exports = {
+  logging: {
+    level: 'debug',
+  },
+  api: {
+    key: '',
+  },
+};

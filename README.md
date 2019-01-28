@@ -1,6 +1,6 @@
 # Summoner Search #
 
-A little CLI to make searches for summoners
+A little CLI to make searches for summoners using RIOT's api
 
 ### Prep ###
 
@@ -12,11 +12,17 @@ A little CLI to make searches for summoners
 ### CLI Usage ###
 
 ```
-node summoner <search method> <search term> <region>
+$ node summoner <search method> <search term> <region>
 ```
 
-`<search method>` can be `summonerId` `name` `puuid` or `account`
+`<search method>` can be `summonerId`, `name`, `puuid`, or `account`.
 
-`<search term>` is the corresponding `encryptedSummonerId` `summonerName` `encryptedPUUID` or `encryptedAccountId` 
+`<search term>` is the corresponding `encryptedSummonerId`, `summonerName`, `encryptedPUUID`, or `encryptedAccountId`. 
 
-`<region>` is optional, and will default to north america if none is provided
+`<region>` is optional, and will default to north america if none is provided.
+
+example:
+```
+$ node summoner name bboness
+```
+

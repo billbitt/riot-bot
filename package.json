@@ -2,7 +2,7 @@
   "name": "RIOTbot",
   "version": "0.0.1",
   "description": "A little bot to interact with RIOT's api",
-  "main": "cli.js",
+  "main": "summoner.js",
   "scripts": {
     "start": "node cli.js"
   },
@@ -12,7 +12,8 @@
   },
   "keywords": [
     "RIOT",
-    "LoL"
+    "LoL",
+    "League of Legends"
   ],
   "author": "@billbitt",
   "bugs": {

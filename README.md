@@ -1,9 +1,22 @@
-# README #
+# Summoner Search #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+A little CLI to make searches for summoners
+
+### Prep ###
+
+1. get an api key from [riot api](https://developer.riotgames.com)
+2. create a copy of `config/config.js.example` as `config/config.js`
+3. add your api key to the config file
+4. run `npm install`
 
 ### CLI Usage ###
 
-`node cli <summoner name> <region>`
+```
+node summoner <search method> <search term> <region>
+```
 
-note: region will default to north america if none is provided
+`<search method>` can be `summonerId` `name` `puuid` or `account`
+
+`<search term>` is the corresponding `encryptedSummonerId` `summonerName` `encryptedPUUID` or `encryptedAccountId` 
+
+`<region>` is optional, and will default to north america if none is provided

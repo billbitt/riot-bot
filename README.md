@@ -12,17 +12,12 @@ A little CLI to make searches for summoners using RIOT's api
 ### CLI Usage ###
 
 ```
-$ node summoner <search method> <search term> <region>
+$ node cli report <summoner name> <region>
 ```
-
-`<search method>` can be `summonerId`, `name`, `puuid`, or `account`.
-
-`<search term>` is the corresponding `encryptedSummonerId`, `summonerName`, `encryptedPUUID`, or `encryptedAccountId`. 
-
-`<region>` is optional, and will default to north america if none is provided.
 
 example:
+
 ```
-$ node summoner name bboness
+$ node cli report bboness
 ```
 

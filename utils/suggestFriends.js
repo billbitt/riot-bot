@@ -38,23 +38,45 @@ module.exports = (summonerName, region) => {
 	})
 	.then(particpantsArray => {
 		logger.debug('participants Array', particpantsArray);
-		// reduce the array of objects down to one array
-		// create a map of summoners by frequency
+		// create a map of summoners with friendship scores
 		let friendshipMap = {};
+		
 		for (let i = 0; i < particpantsArray.length; i++) { 
 			const summonersList = particpantsArray[i]; // each element is one game's worth of summoners
-			console.log('summoner list', summonersList);
-			for (let j = 0; j < summonersList.length; j++ ) { 
-				const summonerName = summonersList[j]; // each element is a summoner
-				console.log('summoner name', summonerName);
-				if (friendshipMap[summonerName]) {
-					friendshipMap[summonerName] += 1;
-					/*
-						here, we should do some logic, like make it +=2 if you won, +5 if you shared a lane and won 
-					*/
-				} else {
-					friendshipMap[summonerName] = 1;
+			logger.debug('summoner list', summonersList);
+			// figure out my team and if I won
+			let myTeam;
+			let iWon = false;
+			for (let key in summonersList) { // find myself in the game's summoners
+				const summoner = summonersList[key];
+				if (summoner.name === summonerName) {
+					myTeam = summoner.team;
+					iWon = summoner.win;
 				}
+			}
+			// add data to the map for the rest of the crew
+			for (let key in summonersList) { 
+				const summoner = summonersList[key]; // each element is a summoner
+				const { name, team, win } = summoner
+				if (name !== summonerName) { // skip myself
+					// assign a =/- score to the friendship (like counting cards in blackjack)
+					// note: add some sort of tiebreaker, like maybe a multiple based on how long ago the match was
+					let friendScore = 1;
+					if (team === myTeam) {
+						friendScore +=1;
+						if (win) {
+							friendScore +=2;
+						}
+					}
+					// add it to the map
+					if (friendshipMap[name]) {
+						friendshipMap[name] += friendScore;
+						
+					} else {
+						friendshipMap[name] = friendScore;
+					}
+				}
+				
 			}
 			
 		}

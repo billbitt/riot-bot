@@ -28,4 +28,5 @@ filter out existing friends and return friend suggestions for those you don't al
 prioritize suggestions based on smarter criteria:
   - whether you have one or lost
   - whether you have played a lane together (i.e. one was sup)
+  - add some weighting based on how recent you played with them
   - ideally, something about your actual play styles

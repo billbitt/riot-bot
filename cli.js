@@ -21,7 +21,7 @@ switch (command) {
   case 'fave_champ':
       favoriteChampion(matchList);
     break;
-  case 'fave_friend':
+  case 'friends':
       suggestFriends(summonerName, region);
     break;
   default:

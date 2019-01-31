@@ -4,11 +4,12 @@ const axios = require('axios');
 const apiKey = require('../config/config.js').api.key;
 
 module.exports = (matchId, region) => {
+	console.log('test2', matchId, region);
 	const matchQuery = `https://${region}.api.riotgames.com/lol/match/v4/matches/${matchId}?api_key=${apiKey}`;
 	return axios
 	.get(matchQuery)
 	.then(response => {
-		logger.debug('match data:', response.data);
+		// logger.debug('match data:', response.data);
 		return response.data;
 	})
 	.catch(error => {

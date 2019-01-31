@@ -19,7 +19,7 @@ logger.debug('region =', region);
 
 switch (command) {
   case 'fave_champ':
-      favoriteChampion(matchList);
+      favoriteChampion(summonerName, region);
     break;
   case 'friends':
       suggestFriends(summonerName, region);

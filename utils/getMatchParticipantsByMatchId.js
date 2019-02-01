@@ -20,7 +20,6 @@ getParticipantdata = (matchData) => {
 }
 
 module.exports = (matchId, region) => {
-	console.log('test1', matchId, region);
 	return getMatchById(matchId, region)
 	.then(matchData => {
 		return getParticipantdata(matchData);

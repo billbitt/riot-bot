@@ -18,10 +18,10 @@ logger.debug('summoner name =', summonerName);
 logger.debug('region =', region);
 
 switch (command) {
-  case 'fave_champ':
+  case 'favorite_champion':
       favoriteChampion(summonerName, region);
     break;
-  case 'friends':
+  case 'suggest_friends':
       suggestFriends(summonerName, region);
     break;
   default:
